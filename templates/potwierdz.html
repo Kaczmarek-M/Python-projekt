@@ -1,0 +1,23 @@
+{% load bootstrap %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="card" style="width: 32rem;">
+    <div class="card-body">
+        <h5 class="card-title">Czy napewno chcesz usunac książke? "{{ book.tytul }} }}"</h5>
+        <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Usun</button>
+    </form>
+    </div>
+    </div>
+
+    <a href="{% url 'test_response' %}" class="btn btn-primary">Cofnij</a>
+</body>
+</html>
